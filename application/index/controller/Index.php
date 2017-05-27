@@ -25,19 +25,20 @@ class Index {
     public function rn() {
 
         $id = empty($_GET['id']) ? 0 : intval($_GET['id']);
-        // $body = file_get_contents('php://input');
-        //$a = empty($_POST['a']) ? '' : $_POST['a'];
-        //$qq = empty($_POST['qq']) ? 0 : intval($_POST['qq']);
+        //$id = empty($_POST['id']) ? 0 : intval($_POST['id']);
+        //$body = json_decode(file_get_contents('php://input'), true);
+        //$id = $body['id'];
         //$this->var_json('调试返回', 9999, array('a'=>$a,'qq'=>$qq,'body'=>$body));
         //假设这是数据源，如MySQL
         $data = array();
         $data = Db::table('user')->where('id',$id)->select();
-        $this->var_json('success', 1000, $data);
+        //array_push($data,array('id'=>$id,'body'=>$body));
+        $this->var_json('success', 888, $data);
         /*$data[979136] = array('qq'=>979136, 'vip'=>5,'level'=>128, 'reg_time'=>1376523234, 'qb'=>300);
         $data[979137] = array('qq'=>979137, 'vip'=>8,'level'=>101, 'reg_time'=>1377123144, 'qb'=>300);
         preg_match('/^[a-zA-Z]+$/', $a) || $this->var_json('非法调用');
         isset($data[$qq]) || $this->var_json('用户不存在', 100001);*/
-        switch ($a) {
+        /*switch ($a) {
             //获取用户基本信息
             case 'info':
                 //你的更多业务逻辑 ...
@@ -53,6 +54,6 @@ class Index {
                 break;
             default:
                 $this->var_json('非法调用');
-        }
+        }*/
     }
 }

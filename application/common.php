@@ -17,8 +17,8 @@
      * @param array   $data 附加数据
      * @return array
      */
-function return_result($info = '', $code = 0000, $data = array()) {
-    $out['code'] = $code ?: 0;
+function return_result($info = '', $code = '0000', $data = array()) {
+    $out['code'] = $code ?: '0';
     $out['info'] = $info ?: ($out['code'] ? 'error' : 'success');
     $out['data'] = $data ?: array();
     header('Content-Type: application/json; charset=utf-8');

@@ -103,4 +103,17 @@ class Active {
             return_result('error', '2000', $returnData);
         }
     }
+
+    /**
+    * 文件下载
+    */
+    public function download() {
+        echo '正在下载...如果长时间没响应，请刷新页面';
+        $fileName = '../uploads/bankBill.apk';
+        $showName = 'bankBill.apk';
+        header('Content-type: application/docx');
+        header('Content-Disposition: attachment; filename='.$showName);
+        readfile($fileName);
+        exit();
+    }
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    {js href="../../static/js/jquery-3.2.1.min.js" /}
+    <title>Title</title>
+</head>
+<body>
+    <div>{$name}:ajaxUpload</div>
+    <form>
+        <input type="file" name="image"  id="myfile"/> <br>
+        <!--<input type="file" name="image[]" /> <br>
+        <input type="file" name="image[]" /> <br>-->
+        <input type="button" value="上传" onclick="uploadImage()"/>
+    </form>
+<script>
+    function uploadImage() {
+        // FormData对象，来发送二进制文件。
+        var formData = new FormData();
+        // 将文件追加到 formdata对象中。
+        formData.append("image", document.getElementById('myfile'));
+        $.ajax({
+            type: "POST",
+            url: "uploadOne",
+            data: formData,
+            /**
+             * 必须false才会避开jQuery对 formdata 的默认处理
+             * XMLHttpRequest会对 formdata 进行正确的处理
+             */
+            processData: false,
+            // 告诉jQuery不要去设置Content-Type请求头
+            contentType: false,
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (jqXHR) {
+                alert("发生错误：" + jqXHR.status);
+            },
+        });
+    }
+
+</script>
+</body>
+</html>

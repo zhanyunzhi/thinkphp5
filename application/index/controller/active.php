@@ -107,7 +107,7 @@ class Active {
     /**
     * 文件下载
     */
-    public function download() {
+    /*public function download() {
         echo '正在下载...如果长时间没响应，请刷新页面';
         $fileName = '../uploads/bankBill.apk';
         $showName = 'bankBill.apk';
@@ -115,5 +115,6 @@ class Active {
         header('Content-Disposition: attachment; filename='.$showName);
         readfile($fileName);
         exit();
-    }
+    }*/
+
 }

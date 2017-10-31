@@ -1,0 +1,54 @@
+$black45:#454545;
+$graye3:#e3e3e3;
+.sxb-header{
+  width:100%;
+  min-width:1180px;
+  height:64px;
+  background-color:$white;
+  margin-bottom:30px;
+}
+.head{
+  width:1180px;
+  margin:0 auto;
+  ul{
+    line-height:64px;
+    li{
+      @include float(left);
+      margin-right:30px;
+      font-size:16px;
+      color:$black45;
+      &:first-child{
+        line-height:0;
+      }
+      &:last-child{
+        @include float(right);
+        margin-right:0;
+      }
+    }
+    .head-img{
+      height:38px;
+      margin-top:13px;
+      margin-bottom:13px;
+      margin-right:110px;
+    }
+    .head-want{
+      display: inline-block;
+      background-color: $graye3;
+      padding:6px 18px;
+      line-height: normal;
+      margin-right:14px;
+    }
+    .head-login,.head-register{
+      font-size:14px;
+      color:$gray85;
+    }
+    .head-login:after{
+      content: "|";
+      margin: 0 4px 0 8px;
+      color:$black45;
+    }
+  }
+}
+.head-active{
+  color:$color-primary;
+}

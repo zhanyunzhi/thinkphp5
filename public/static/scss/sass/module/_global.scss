@@ -1,0 +1,46 @@
+html{
+    -webkit-text-size-adjust:none;
+    font-family:  'Microsoft Yahei';
+}
+body,h1, h2, h3, h4, h5, h6{
+  margin:0;
+}
+ul, li{
+  margin: 0;
+  padding: 0;
+  list-style:none;
+}
+a{
+  text-decoration:none;
+  color:$black12;
+}
+input[type="submit"],input[type="reset"],input[type="button"],button{
+  -webkit-appearance:none;  /*Remove the apple the default UI to render button*/
+}
+.clear-fix{
+  @include clearfix;
+}
+
+.shade {
+  position: fixed;
+  //left: 0;
+  top: 0;
+  @include setMaxWidth();
+  width: 100%;
+  height: 100%;
+  @include bgcolor-alpha(rgba(0, 0, 0, .5));
+  z-index: 9999;
+  display: none;
+}
+.wrapper{
+  @include setWidth();
+  margin:0 auto;
+}
+.mt30{
+  margin-top:30px;
+}
+.top-back{
+  position: fixed;
+  bottom: 60px;
+  cursor: pointer;
+}
